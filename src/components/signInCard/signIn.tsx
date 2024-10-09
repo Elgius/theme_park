@@ -28,10 +28,8 @@ export default function SignIn() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold">Sign In</CardTitle>
-          <CardDescription>
-            Enter your username and password to access your account.
-          </CardDescription>
+          <CardTitle className="text-2xl font-bold">Please log in!</CardTitle>
+          <CardDescription>Please Enter your details!</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
