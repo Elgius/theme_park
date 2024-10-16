@@ -1,0 +1,206 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Home,
+  Phone,
+  Scale,
+  Ticket,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
+const carouselImages = [
+  "https://images.unsplash.com/photo-1719642674134-de3f983ba9ec?q=80&w=407&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1534283542176-7cb0c9ac33e0?q=80&w=388&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1602233561016-cc7383ff25da?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+];
+
+const activities = [
+  {
+    title: "Thrilling Roller Coaster",
+    description:
+      "Experience the adrenaline rush on our newest roller coaster with loops and steep drops.",
+    image:
+      "https://images.unsplash.com/photo-1465996140498-df84be101126?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    duration: "3 minutes",
+    minHeight: "48 inches",
+  },
+  {
+    title: "Magical Carousel",
+    description:
+      "A classic ride for all ages, featuring hand-painted horses and charming music.",
+    image:
+      "https://images.unsplash.com/photo-1424161318821-cb73e69b9422?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    duration: "5 minutes",
+    minHeight: "None",
+  },
+  {
+    title: "Water Splash Adventure",
+    description:
+      "Cool off in our water park area with slides, fountains, and a lazy river.",
+    image:
+      "https://images.unsplash.com/photo-1526762100-0999d11d611c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0ZXIlMjBwYXJrfGVufDB8fDB8fHww",
+    duration: "All day",
+    minHeight: "42 inches for slides",
+  },
+];
+
+export default function ThemeParkPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prev) => (prev - 1 + carouselImages.length) % carouselImages.length
+    );
+  };
+
+  return (
+    <div className="bg-gradient-to-b from-blue-300 to-green-500 min-h-screen overflow-hidden">
+      <div className="container mx-auto px-4 ">
+        {/* sample header */}
+        <header className=" text-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative pt-6 pb-16 sm:pb-10">
+              <div className="flex flex-col items-center space-y-3">
+                <Ticket className="h-16 w-16 text-yellow-300 animate-bounce" />
+                <h1
+                  className="mt-4 text-4xl sm:text-5xl font-extrabold text-center"
+                  style={{ fontFamily: "'Bangers', cursive" }}
+                >
+                  Cool theme park
+                </h1>
+              </div>
+              <nav className="mt-8 flex flex-wrap justify-center gap-4">
+                <Link href="/">
+                  <Button className=" bg-blue-500 hover:bg-blue-600 space-x-4">
+                    <span>Home</span>
+                    <Home className="h-5 w-5 mr-2" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button className=" bg-green-500 hover:bg-green-600">
+                    <Phone className="h-5 w-5 mr-2" />
+                    <span>Contact</span>
+                  </Button>
+                </Link>
+                <Link href="/legal">
+                  <Button className=" bg-purple-500 hover:bg-purple-600">
+                    <Scale className="h-5 w-5 mr-2" />
+                    <span>Legal</span>
+                  </Button>
+                </Link>
+              </nav>
+            </div>
+          </div>
+        </header>
+        <main className="mt-8">
+          <section className="mb-12 relative">
+            <div className="relative h-[400px] w-full overflow-hidden rounded-lg">
+              {carouselImages.map((src, index) => (
+                <Image
+                  key={index}
+                  src={src}
+                  alt={`Theme park attraction ${index + 1}`}
+                  fill
+                  className={`object-cover transition-opacity duration-500 ${
+                    index === currentSlide ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              ))}
+            </div>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80"
+              onClick={prevSlide}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80"
+              onClick={nextSlide}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-xl text-center m-20 font-semibold mb-4">
+              Opening hours
+            </h2>
+            <div className="overflow-x-auto rounded-lg">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-gray-100">
+                    <th className="border p-2">Opening</th>
+                    <th className="border p-2">Closing</th>
+                    <th className="border p-2">Entry location</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[...Array(1)].map((_, index) => (
+                    <tr key={index} className="text-center bg-white">
+                      <td className="border p-2">6 am</td>
+                      <td className="border p-2">12 am</td>
+                      <td className="border p-2">Random island</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section className="grid md:grid-cols-3 gap-8 my-10">
+            {activities.map((activity, index) => (
+              <Card key={index}>
+                <CardHeader>
+                  <CardTitle>{activity.title}</CardTitle>
+                  <CardDescription>{activity.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Image
+                    src={activity.image}
+                    alt={activity.title}
+                    width={300}
+                    height={200}
+                    className="rounded-lg object-cover w-full"
+                  />
+                  <div className="mt-4 space-y-2">
+                    <p>
+                      <strong>Duration:</strong> {activity.duration}
+                    </p>
+                    <p>
+                      <strong>Minimum Height:</strong> {activity.minHeight}
+                    </p>
+                  </div>
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                  <Button variant="outline">Learn More</Button>
+                  <Button>Book Now</Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </section>
+        </main>
+      </div>
+    </div>
+  );
+}
