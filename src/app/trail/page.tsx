@@ -10,6 +10,7 @@ import {
   Phone,
   Scale,
   Ticket,
+  User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -103,6 +104,12 @@ export default function ThemeParkPage() {
                   <Button className=" bg-purple-500 hover:bg-purple-600">
                     <Scale className="h-5 w-5 mr-2" />
                     <span>Legal</span>
+                  </Button>
+                </Link>
+                <Link href="/login">
+                  <Button className=" bg-emerald-500 hover:bg-emerald-600">
+                    <User className="h-5 w-5 mr-2" />
+                    <span>login</span>
                   </Button>
                 </Link>
               </nav>
