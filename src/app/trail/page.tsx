@@ -4,12 +4,15 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
+  Book,
   ChevronLeft,
   ChevronRight,
+  Facebook,
   Home,
+  Instagram,
   Phone,
-  Scale,
-  Ticket,
+  // Scale,
+  // Ticket,
   User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -72,26 +75,27 @@ export default function ThemeParkPage() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-300 to-green-500 min-h-screen overflow-hidden">
+    <div className=" min-h-screen overflow-hidden">
       <div className="container mx-auto px-4 ">
         {/* sample header */}
         <header className=" text-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative pt-6 pb-16 sm:pb-10">
               <div className="flex flex-col items-center space-y-3">
-                <Ticket className="h-16 w-16 text-yellow-300 animate-bounce" />
+                {/* <Ticket className="h-16 w-16 text-yellow-300 animate-bounce" /> */}
                 <h1
                   className="mt-4 text-4xl sm:text-5xl font-extrabold text-center"
                   style={{ fontFamily: "'Bangers', cursive" }}
                 >
-                  Cool theme park
+                  Cool Theme Park
                 </h1>
               </div>
               <nav className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link href="/">
                   <Button className=" bg-blue-500 hover:bg-blue-600 space-x-4">
+                    <Home className="h-5 w-5 " />
+
                     <span>Home</span>
-                    <Home className="h-5 w-5 mr-2" />
                   </Button>
                 </Link>
                 <Link href="/contact">
@@ -100,10 +104,16 @@ export default function ThemeParkPage() {
                     <span>Contact</span>
                   </Button>
                 </Link>
-                <Link href="/legal">
+                {/* <Link href="/legal">
                   <Button className=" bg-purple-500 hover:bg-purple-600">
                     <Scale className="h-5 w-5 mr-2" />
                     <span>Legal</span>
+                  </Button>
+                </Link> */}
+                <Link href="/booking">
+                  <Button className=" bg-emerald-500 hover:bg-emerald-600">
+                    <Book className="h-5 w-5 mr-2" />
+                    <span>Booking</span>
                   </Button>
                 </Link>
                 <Link href="/login">
@@ -206,6 +216,76 @@ export default function ThemeParkPage() {
               </Card>
             ))}
           </section>
+
+          <>
+            <section>
+              <footer className="bg-gray-100 py-8 min-w-screen">
+                <div className="container mx-auto px-4">
+                  <div className="grid md:grid-cols-3 gap-8">
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">About</h3>
+                      <ul className="space-y-1">
+                        <li>
+                          <a
+                            href="#"
+                            className="text-gray-600 hover:text-[#e8a87c]"
+                          >
+                            DOWNLOADS
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="text-gray-600 hover:text-[#e8a87c]"
+                          >
+                            CONTACT
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="text-gray-600 hover:text-[#e8a87c]"
+                          >
+                            TERMS & CONDITIONS
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Contact</h3>
+                      <p className="text-gray-600">T: + 960 330 9911</p>
+                      <p className="text-gray-600">
+                        E: reservations@ThemeParkPage.com
+                      </p>
+                      <p className="text-gray-600">
+                        ThemePark limited, Male&apos;, Maldives
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold mb-2">Social</h3>
+                      <div className="flex space-x-4">
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-[#e8a87c]"
+                        >
+                          <Facebook className="h-6 w-6" />
+                        </a>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-[#e8a87c]"
+                        >
+                          <Instagram className="h-6 w-6" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-8 text-center">
+                    <p className="text-gray-600">&copy; Themepark 2024</p>
+                  </div>
+                </div>
+              </footer>
+            </section>
+          </>
         </main>
       </div>
     </div>
