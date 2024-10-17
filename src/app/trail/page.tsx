@@ -110,7 +110,7 @@ export default function ThemeParkPage() {
                     <span>Legal</span>
                   </Button>
                 </Link> */}
-                <Link href="/booking">
+                <Link href="/bookings">
                   <Button className=" bg-emerald-500 hover:bg-emerald-600">
                     <Book className="h-5 w-5 mr-2" />
                     <span>Booking</span>
