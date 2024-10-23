@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const activities = [
   {
@@ -90,8 +91,8 @@ export default function Component() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-4">
-                <h2 className="text-lg font-semibold text-center">
-                  {activity.name}
+                <h2 className="text-lg font-semibold text-center cursor-pointer">
+                  <Link href="/events/test">{activity.name}</Link>
                 </h2>
               </div>
             </div>
