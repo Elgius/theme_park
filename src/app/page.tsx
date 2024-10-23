@@ -9,8 +9,8 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <div>We in business</div>
         <div>
-          <Link href="/trail">
-            <Button>Version 1.0</Button>
+          <Link href="/main">
+            <Button>Version 2.0</Button>
           </Link>
         </div>
       </main>

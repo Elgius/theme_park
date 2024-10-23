@@ -6,8 +6,7 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
@@ -21,7 +20,6 @@ import {
 import { motion } from "framer-motion";
 
 export default function Page() {
-  const bookingLink = "/date";
   const images = [
     "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -30,6 +28,8 @@ export default function Page() {
     "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ];
 
+  const link1 = `/billing`;
+  const link2 = `/billing`;
   return (
     <>
       <main className="p-23 flex justify-center items-center min-h-screen overflow-hidden bg-green-400 flex-col gap-10">
@@ -113,9 +113,11 @@ export default function Page() {
                     </div>
                   </ModalContent>
                   <ModalFooter className="gap-4">
-                    <Button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                      Book Now
-                    </Button>
+                    <Link href={link1}>
+                      <Button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+                        Book Now
+                      </Button>
+                    </Link>
                   </ModalFooter>
                 </ModalBody>
               </Modal>
@@ -200,40 +202,14 @@ export default function Page() {
                     </div>
                   </ModalContent>
                   <ModalFooter className="gap-4">
-                    <Button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                      Book Now
-                    </Button>
+                    <Link href={link2}>
+                      <Button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+                        Book Now
+                      </Button>
+                    </Link>
                   </ModalFooter>
                 </ModalBody>
               </Modal>
-            </CardFooter>
-          </Card>
-        </div>
-        {/* Pass selector */}
-        <div>
-          <Card className="w-[350px] space-y-10 mb-10 shadow-xl ">
-            <CardHeader className="text-center text-2xl font-bold">
-              Choose A Pass
-            </CardHeader>
-            <CardContent className="flex items-center justify-center">
-              <RadioGroup
-                defaultValue="normal"
-                className="flex items-center gap-10"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="normal" id="r1" />
-                  <Label htmlFor="r1">Normal</Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="premium" id="r2" />
-                  <Label htmlFor="r2">Premium</Label>
-                </div>
-              </RadioGroup>
-            </CardContent>
-            <CardFooter className="flex items-center justify-center">
-              <Link href={bookingLink}>
-                <Button>Submit</Button>
-              </Link>
             </CardFooter>
           </Card>
         </div>
