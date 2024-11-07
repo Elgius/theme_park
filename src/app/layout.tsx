@@ -28,8 +28,8 @@ export default function RootLayout({
     <html lang="en">
       <PlausibleProvider
         selfHosted
-        customDomain="plausibly.wheredoc.org"
-        domain="themepark.wheredoc.org"
+        customDomain="https://plausibly.wheredoc.org"
+        domain="https://themepark.wheredoc.org/"
       >
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
