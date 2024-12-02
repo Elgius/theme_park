@@ -15,3 +15,4 @@ jobs:
           docker login --username ${{ secrets.USER  }} --password ${{ secrets.PAT  }} ghcr.io
           docker build . --tag ghcr.io/elgius/themepark:latest
           docker push ghcr.io/elgius/themepark:latest
+          curl --request GET '${{ secrets.HOOK }}' --header 'Authorization: Bearer ${{ secrets.TOKEN }}'
