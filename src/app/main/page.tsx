@@ -55,6 +55,11 @@ export default function Page() {
                   Contact
                 </a>
               </li>
+              <li>
+                <a href="/login" className="text-gray-600 hover:text-gray-900">
+                  Login
+                </a>
+              </li>
             </ul>
           </nav>
         </div>

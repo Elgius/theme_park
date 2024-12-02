@@ -10,7 +10,7 @@ export default function Home() {
         <div>We in business</div>
         <div>
           <Link href="/main">
-            <Button>Version 2.0</Button>
+            <Button>Version 3.0</Button>
           </Link>
         </div>
       </main>
