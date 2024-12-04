@@ -82,7 +82,7 @@ export default function Component() {
               key={index}
               className="bg-white rounded-lg shadow-md overflow-hidden"
             >
-              <Image
+              <img
                 src={activity.image}
                 alt={activity.name}
                 width={300}
