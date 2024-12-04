@@ -43,10 +43,7 @@ export default function Page() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/bookings"
-                  className="text-gray-600 hover:text-gray-900"
-                >
+                <a href="/PassS" className="text-gray-600 hover:text-gray-900">
                   Tickets
                 </a>
               </li>
@@ -111,9 +108,11 @@ export default function Page() {
                   Events
                 </Button>
               </Link>
-              <Button className="bg-orange-500 text-white w-20 px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
-                Hotels
-              </Button>
+              <Link href="/hotels">
+                <Button className="bg-orange-500 text-white w-20 px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                  Hotels
+                </Button>
+              </Link>
               <Button className="bg-orange-500 text-white w-20 px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
                 Book now
               </Button>
