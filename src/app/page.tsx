@@ -10,7 +10,7 @@ export default function Home() {
         <div>We in business, auto-deploy mode on + tracking</div>
         <div>
           <Link href="/main">
-            <Button>Version 4.0</Button>
+            <Button>Version 5.0</Button>
           </Link>
         </div>
       </main>
