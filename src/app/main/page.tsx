@@ -104,16 +104,16 @@ export default function Page() {
             </p>
             <div className="my-7 flex flex-col items-center justify-center md:flex-row gap-4">
               <Link href="/events">
-                <Button className="bg-orange-500 text-white w-20 px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                <Button className="bg-violet-300 text-white font-bold w-20 px-6 py-2 rounded-full hover:bg-violet-400">
                   Events
                 </Button>
               </Link>
               <Link href="/hotels">
-                <Button className="bg-orange-500 text-white w-20 px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                <Button className="bg-violet-300 text-white font-bold w-20 px-6 py-2 rounded-full hover:bg-violet-400 transition-colors">
                   Hotels
                 </Button>
               </Link>
-              <Button className="bg-orange-500 text-white w-20 px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+              <Button className="bg-violet-300 text-white font-bold w-20 px-6 py-2 rounded-full hover:bg-violet-400 transition-colors">
                 Book now
               </Button>
             </div>
