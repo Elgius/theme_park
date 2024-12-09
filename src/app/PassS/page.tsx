@@ -21,7 +21,7 @@ export default function Page() {
     <>
       <main className="p-23 flex justify-center items-center min-h-screen overflow-hidden flex-col gap-10">
         {/* normal pass */}
-        <div className="bg-gray-300 mt-10 flex md:flex-row lg:flex-row gap-10 flex-col ">
+        <div className=" mt-10 flex md:flex-row lg:flex-row gap-10 flex-col ">
           <Card className="bg-red-50 w-[350px] hover:shadow-xl ">
             <CardHeader className="text-center text-2xl font-bold">
               Event Pass
