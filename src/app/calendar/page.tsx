@@ -1,8 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useState, FC } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, User } from "lucide-react";
+import Link from "next/link";
 
 const DAYS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const MONTHS = ["October", "November", "December"];
@@ -13,9 +14,19 @@ type TicketType = {
   quantity: number;
 };
 
+
+
 export default function Component() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [currentMonth, setCurrentMonth] = useState(1); // November
+  const [isClicked, setIsClicked] = useState(false);
+
+  const clickText = () => {
+    setIsClicked(!isClicked);
+  }
+  
+
+ 
 
   const tickets: TicketType[] = [
     {
@@ -68,33 +79,6 @@ export default function Component() {
   return (
     <div className="max-w-4xl mx-auto p-4">
       <div className="mb-8">
-        {/* <div className="flex justify-between items-center mb-4">
-          {[1, 2, 3, 4, 5].map((step) => (
-            <div key={step} className="flex items-center">
-              <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                  step === 2 ? "bg-green-600 text-white" : "bg-gray-200"
-                }`}
-              >
-                {step}
-              </div>
-              {step < 5 && (
-                <div
-                  className={`h-1 w-16 ${
-                    step < 2 ? "bg-green-600" : "bg-gray-200"
-                  }`}
-                />
-              )}
-            </div>
-          ))}
-        </div> */}
-        {/* <div className="flex justify-between text-sm">
-          <span>1. Ticket Type</span>
-          <span className="text-green-600 font-semibold">2. Date</span>
-          <span>3. Extras</span>
-          <span>4. Personal Details</span>
-          <span>5. Payment</span>
-        </div> */}
       </div>
 
       <header className="flex items-center mb-6">
@@ -105,8 +89,55 @@ export default function Component() {
         <span className="ml-auto text-gray-500">Step 2 of 5</span>
       </header>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        <Card className="md:col-span-2">
+      <div className=" mt-10 flex md:flex-row lg:flex-row  flex-col">
+
+      
+
+      <div className="grid md:grid-cols-5 ">
+      <Card className="bg-violet-50 md:col-span-1 ">
+      
+          <CardHeader>
+            <div className="flex justify-between items-center">
+              <CardTitle className="text-lg text-center">Theme Park Name </CardTitle>
+            </div>
+            <div>
+                <p className="text-xs font-semibold text-center">Booking</p>
+            {/* <div className=" grid grid-cols-7 gap-2 text-center"> */}
+              </div>
+          </CardHeader>
+          <CardContent className=" text-sm font-semibold text-center"  >
+              <br></br>
+              
+                <div className="space-x-7">
+                  <p className="">Date</p>
+
+                  <Link href="/calendar/booking">
+                  <p className={`text-slate-400 ${isClicked ? "text-black" : "hover:text-black"} transition-colors duration-300`}
+                  onClick={clickText} // Trigger clickText when clicked 
+                  >Guest Info</p>
+
+                  </Link>
+                  <Link href="/calendar/booking/roombooking">
+                  <p className={`text-slate-400 ${isClicked ? "text-black" : "hover:text-black"} transition-colors duration-300`}
+                  onClick={clickText} // Trigger clickText when clicked 
+                  >Hotel</p>
+                
+                  </Link>
+                  <Link href="/events">
+                    <div >
+                      <p className={`text-slate-400 ${isClicked ? "text-black" : "hover:text-black"} transition-colors duration-300`}
+                      onClick={clickText} 
+                    >Payment</p>
+                    </div>
+                  </Link>
+                    </div>
+            </CardContent>
+          
+        </Card>
+
+
+
+        <Card className="bg-white md:col-span-4">
           <CardHeader>
             <div className="flex justify-between items-center">
               <Button
@@ -127,7 +158,7 @@ export default function Component() {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-7 gap-2 text-center">
+            <div className="grid grid-cols-7 text-center">
               {DAYS.map((day) => (
                 <div key={day} className="font-semibold text-green-800">
                   {day}
@@ -141,7 +172,7 @@ export default function Component() {
                     day === 23
                       ? "bg-red-100"
                       : day === 30
-                      ? "bg-yellow-300"
+                      ? "bg-green-400"
                       : ""
                   }`}
                   onClick={() =>
@@ -155,55 +186,34 @@ export default function Component() {
               ))}
             </div>
           </CardContent>
+          <CardContent className="">
+                <Button variant="outline" className="text-red-500 border-red-500">
+              09:57
+                </Button>
+            </CardContent>
+          
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Ticket Summary</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div>
-                <p className="font-semibold">Date</p>
-                <p>
-                  {selectedDate
-                    ? selectedDate.toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                      })
-                    : "Nov, 30"}
-                </p>
-                <p>16:40</p>
-              </div>
-              <div className="flex items-center">
-                <User className="mr-2" />
-                <span>{totalTickets}</span>
-              </div>
-              {tickets.map((ticket, index) => (
-                <div key={index} className="flex justify-between">
-                  <span>{ticket.name}</span>
-                  <span>{ticket.quantity}</span>
-                </div>
-              ))}
-              <div className="pt-4 border-t">
-                <div className="flex justify-between font-semibold">
-                  <span>Total</span>
-                  <span>€{totalPrice.toFixed(2)}</span>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+        
+
+        
       </div>
 
-      <div className="mt-6 flex justify-between">
-        <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3 px-8">
+      
+    </div>
+    <div className="mt-6 flex justify-between">
+      <Link href="/hotels">
+      <Button className="bg-violet-300 hover:bg-violet-400 text-white font-semibold py-3 px-8">
           Continue
         </Button>
-        <Button variant="outline" className="text-red-500 border-red-500">
-          09:57
-        </Button>
+      </Link>
+        
+       
       </div>
-    </div>
+
+        
+  </div>
+
+      
   );
 }
