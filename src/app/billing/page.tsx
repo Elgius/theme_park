@@ -67,18 +67,17 @@ export default function Page() {
         <Button variant="ghost" className="mr-2">
           <ArrowLeft className="h-6 w-6" />
         </Button>
-        <h1 className="text-2xl font-bold">Select Ticket Quantity</h1>
+        {/* <h1 className="text-2xl font-bold">Select Ticket Quantity</h1> */}
       </header>
 
       <div className="grid md:grid-cols-3 gap-6">
-        <Card className="md:col-span-2">
+        <Card className="bg-orange-50 md:col-span-2">
           <CardHeader>
-            <CardTitle>Ticket Selection</CardTitle>
+            <CardTitle className="text-xl font-semibold ">Ticket Selection</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-gray-600 mb-4">
-              Each booking is treated as one group and will enter the park and
-              visit Santa together, we cannot split groups on the day. If your
+            <p className="text-base text-gray-600 mb-4">
+              Each booking is treated as one group and will enter the park together, we cannot split groups on the day. If your
               group will not check in together, please book tickets separately.
             </p>
             <h2 className="text-xl font-semibold mb-4">Select quantity</h2>
@@ -121,8 +120,8 @@ export default function Page() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
+        <Card className="bg-violet-50">
+          <CardHeader >
             <CardTitle>Ticket Summary</CardTitle>
           </CardHeader>
           <CardContent>
@@ -170,7 +169,7 @@ export default function Page() {
 
       <div className="mt-6">
         <Button
-          className="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-3"
+          className="w-full bg-violet-300 hover:bg-violet-400 text-black font-semibold py-3"
           disabled={totalQuantity === 0}
         >
           Continue
