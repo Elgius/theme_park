@@ -24,7 +24,7 @@ export default function Page() {
         <div className="bg-gray-300 mt-10 flex md:flex-row lg:flex-row gap-10 flex-col ">
           <Card className="bg-red-50 w-[350px] hover:shadow-xl ">
             <CardHeader className="text-center text-2xl font-bold">
-            Event Pass
+              Event Pass
             </CardHeader>
             <CardContent className="flex items-center justify-center flex-col">
               <div className="w-[250px] p-4">
@@ -42,10 +42,14 @@ export default function Page() {
                 </h1>
               </div> */}
               <br></br>
-             
-               <CardContent className="flex items-center justify-center">
-              <div className="text-sm text-slate-500 font-semibold text-justify"> Get your tickets for any event(s) of your choosing! We offer a wide range of activities for you to select from.</div>
-            </CardContent>
+
+              <CardContent className="flex items-center justify-center">
+                <div className="text-sm text-slate-500 font-semibold text-justify">
+                  {" "}
+                  Get your tickets for any event(s) of your choosing! We offer a
+                  wide range of activities for you to select from.
+                </div>
+              </CardContent>
             </CardContent>
             <CardFooter className="flex items-center justify-center">
               <AdsModal />
@@ -72,11 +76,14 @@ export default function Page() {
                 </h1>
               </div> */}
               <br></br>
-             
+
               <CardContent className="flex items-center justify-center">
-              <div className="text-sm text-slate-500 font-semibold text-justify"> With our premium pass, gain access to all of our daily events.</div>
-            </CardContent>
-            <br></br>
+                <div className="text-sm text-slate-500 font-semibold text-justify">
+                  {" "}
+                  With our premium pass, gain access to all of our daily events.
+                </div>
+              </CardContent>
+              <br></br>
             </CardContent>
             <CardFooter className="flex items-center justify-center">
               <AdsModal />
@@ -104,8 +111,12 @@ export default function Page() {
               </div> */}
               <br></br>
               <CardContent className="flex items-center justify-center">
-              <div className="text-sm text-slate-500 font-semibold text-justify"> Celebrate birthday's, anniversaries, and other special occasions with us, at a discounted rate!</div>
-            </CardContent>
+                <div className="text-sm text-slate-500 font-semibold text-justify">
+                  {" "}
+                  Celebrate birthday&apos;s, anniversaries, and other special
+                  occasions with us, at a discounted rate!
+                </div>
+              </CardContent>
             </CardContent>
             <CardFooter className="flex items-center justify-center">
               <AdsModal />
