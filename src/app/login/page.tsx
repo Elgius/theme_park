@@ -3,8 +3,7 @@ import { LoginForm } from "@/components/login-form";
 import Image from "next/image";
 
 import Pool from "@/assets/themepark.png";
-import Ferris from "@/assets/Ferris.jpg";
-import MerryGoROund from "@/assets/merryGoRound.jpg";
+
 
 export default function Page() {
   return (
