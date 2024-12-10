@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import Link from "next/link";
+
 
 import {
   BookingForm,
@@ -12,7 +12,6 @@ import {
   BookingFormContent,
 } from "@/components/ui/booking-form";
 
-import { Trash2, PlusCircle } from "lucide-react";
 
 
 const DAYS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
@@ -37,10 +36,7 @@ export default function BookingPage() {
   const [currentMonth, setCurrentMonth] = useState(1); // November
   const [isClicked, setIsClicked] = useState(false);
 
-  const clickText = () => {
-    setIsClicked(!isClicked);
-  };
-
+ 
   // const handleSubmit = (e: React.FormEvent) => {
   //   e.preventDefault();
   //   console.log("Form submitted:", people);

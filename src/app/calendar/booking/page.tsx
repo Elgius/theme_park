@@ -19,8 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Trash2, PlusCircle } from "lucide-react";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+
 
 interface Person {
   id: number;
@@ -59,9 +58,7 @@ export default function BookingPage() {
     },
   ]);
 
-  const [payer, setPayer] = useState<PayerDetails[]>([
-    { cardHolder: "", cardNumber: "", expiryDate: "", cvv: "" },
-  ]);
+ 
 
   const addPerson = () => {
     const newId =
@@ -80,12 +77,7 @@ export default function BookingPage() {
     ]);
   };
 
-  const addPayer = (field: keyof PayerDetails, value: string) => {
-    setPayer({
-      ...payer,
-      [field]: value,
-    });
-  };
+ 
 
   const removePerson = (id: number) => {
     setPeople(people.filter((person) => person.id !== id));
@@ -99,12 +91,7 @@ export default function BookingPage() {
     );
   };
 
-  const [isClicked, setIsClicked] = useState(false);
-
-  const clickText = () => {
-    setIsClicked(!isClicked);
-  };
-
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", people);

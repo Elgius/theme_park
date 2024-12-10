@@ -6,13 +6,12 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-  CardTitle,
+
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Trash2 } from "lucide-react";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+
 
 
 interface Booking {
@@ -104,10 +103,7 @@ export default function BookingPage() {
 
   const [isClicked, setIsClicked] = useState(false);
 
-  const clickText = () => {
-    setIsClicked(!isClicked);
-  };
-
+ 
   return (
     <BookingForm title="Theme Park Name" subtitle="Step 3 of 4" links={links}>
     <BookingFormHeader />
