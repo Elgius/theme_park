@@ -114,7 +114,7 @@ export default function Page() {
               prolly good stuff
             </p>
             <div className="my-7 flex flex-col items-center justify-center md:flex-row gap-4">
-              <Link href="/events">
+              <Link href="/calendar/booking/test">
                 <Button className="bg-violet-300 text-white font-bold w-20 px-6 py-2 rounded-full hover:bg-violet-400">
                   Events
                 </Button>
@@ -141,7 +141,7 @@ export default function Page() {
               width={200}
               height={200}
               layout="fixed"
-              className="rounded-lg object-cover"
+              className="rounded-lg"
             />
             <Image
             src={Diving}
@@ -150,7 +150,7 @@ export default function Page() {
               width={200}
               height={200}
               layout="fixed"
-              className="rounded-lg object-cover"
+              className="rounded-lg "
             />
             <Image
             src={BumperCar}
