@@ -347,12 +347,12 @@ export default function Component() {
               ))} */}
             </CardContent>
 
-            <CardFooter className="flex justify-between">
+            <CardFooter className="flex justify-end">
               <Button
                 className="bg-violet-300 hover:bg-violet-400 text-white font-semibold py-3 px-8"
                 type="submit"
               >
-                Submit Booking
+                Continue
               </Button>
             </CardFooter>
           </Card>

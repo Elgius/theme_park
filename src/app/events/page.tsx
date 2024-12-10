@@ -1,32 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import Diving from "@/assets/diving.jpg"
+import RomanticDinner from "@/assets/romanticdinner.jpg"
+import BumperCar from "@/assets/bumpercar.jpg"
+import FerrisWheel from "@/assets/carousel.jpg"
+import Surfing from "@/assets/surfing.jpg"
+
 const activities = [
   {
     name: "Diving",
     image:
-      "https://images.unsplash.com/photo-1517627043994-b991abb62fc8?q=80&w=417&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    Diving
+      // "https://images.unsplash.com/photo-1517627043994-b991abb62fc8?q=80&w=417&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Bumper car Rides",
     image:
-      "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    BumperCar
+      // "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "ferris wheel ride",
     image:
-      "https://images.unsplash.com/photo-1496711914408-534a237d7e26?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    FerrisWheel
+      // "https://images.unsplash.com/photo-1496711914408-534a237d7e26?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "surfing",
     image:
-      "https://images.unsplash.com/photo-1459745930869-b3d0d72c3cbb?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    Surfing
+      // "https://images.unsplash.com/photo-1459745930869-b3d0d72c3cbb?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
     name: "Romantic Dinner",
     image:
-      "https://images.unsplash.com/photo-1714692601149-3b76bd0b300f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      RomanticDinner
+      // "https://images.unsplash.com/photo-1714692601149-3b76bd0b300f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "fishing trip",

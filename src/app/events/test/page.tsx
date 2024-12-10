@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
+import Link from "next/link";
+import Diving from "@/assets/diver.jpg"
+
 export default function Events() {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -42,7 +45,8 @@ export default function Events() {
           <div className="md:flex">
             <div className="md:flex-shrink-0">
               <Image
-                src="https://images.unsplash.com/photo-1517627043994-b991abb62fc8?q=80&w=417&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={Diving}
+                // src="https://images.unsplash.com/photo-1517627043994-b991abb62fc8?q=80&w=417&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Diving"
                 width={300}
                 height={400}
@@ -93,9 +97,11 @@ export default function Events() {
                 </p>
               </div>
               <div className="mt-6">
-                <Button className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors">
+                <Link href="/PassS">
+                <Button className="bg-violet-300 text-white font-bold px-6 py-2 rounded-full hover:bg-violet-400 transition-colors">
                   Book now
-                </Button>
+                </Button></Link>
+               
               </div>
             </div>
           </div>
