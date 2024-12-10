@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 import Link from "next/link";
-import Diving from "@/assets/diver.jpg"
+import Diving from "@/assets/diver.jpg";
 
 export default function Events() {
   return (
@@ -45,7 +45,7 @@ export default function Events() {
           <div className="md:flex">
             <div className="md:flex-shrink-0">
               <Image
-              src={Diving}
+                src={Diving}
                 // src="https://images.unsplash.com/photo-1517627043994-b991abb62fc8?q=80&w=417&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Diving"
                 width={300}
@@ -98,10 +98,10 @@ export default function Events() {
               </div>
               <div className="mt-6">
                 <Link href="/PassS">
-                <Button className="bg-violet-300 text-white font-bold px-6 py-2 rounded-full hover:bg-violet-400 transition-colors">
-                  Book now
-                </Button></Link>
-               
+                  <Button className="bg-violet-300 text-white font-bold px-6 py-2 rounded-full hover:bg-violet-400 transition-colors">
+                    Book now
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

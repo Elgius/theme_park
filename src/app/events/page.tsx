@@ -1,57 +1,72 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
-import Diving from "@/assets/diving.jpg"
-import RomanticDinner from "@/assets/romanticdinner.jpg"
-import BumperCar from "@/assets/bumpercar.jpg"
-import FerrisWheel from "@/assets/carousel.jpg"
-import Surfing from "@/assets/surfing.jpg"
+import Diving from "@/assets/diving.jpg";
+import RomanticDinner from "@/assets/romanticdinner.jpg";
+import BumperCar from "@/assets/bumpercar.jpg";
+import FerrisWheel from "@/assets/carousel.jpg";
+import Surfing from "@/assets/surfing.jpg";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const activities = [
   {
     name: "Diving",
-    image:
-    Diving
-      // "https://images.unsplash.com/photo-1517627043994-b991abb62fc8?q=80&w=417&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: Diving,
   },
   {
     name: "Bumper car Rides",
-    image:
-    BumperCar
-      // "https://images.unsplash.com/photo-1508974239320-0a029497e820?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: BumperCar,
   },
   {
     name: "ferris wheel ride",
-    image:
-    FerrisWheel
-      // "https://images.unsplash.com/photo-1496711914408-534a237d7e26?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: FerrisWheel,
   },
   {
     name: "surfing",
-    image:
-    Surfing
-      // "https://images.unsplash.com/photo-1459745930869-b3d0d72c3cbb?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: Surfing,
   },
 
   {
     name: "Romantic Dinner",
-    image:
-      RomanticDinner
-      // "https://images.unsplash.com/photo-1714692601149-3b76bd0b300f?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "fishing trip",
-    image:
-      "https://images.unsplash.com/photo-1678393811192-08599118e684?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  },
-  {
-    name: "live music shows",
-    image:
-      "https://images.unsplash.com/photo-1499364615650-ec38552f4f34?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGl2ZSUyMG11c2ljfGVufDB8fDB8fHww",
+    image: RomanticDinner,
   },
 ];
 
+interface Events {
+  id: number;
+  name: string;
+  image: string;
+}
+
 export default function Component() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [event, setEvents] = useState<Events[]>([]);
+
+  useEffect(() => {
+    async function puller() {
+      try {
+        const response = await axios.get("/api/events");
+
+        if (!response.data.success) {
+          alert("Contact support, the server is down.");
+          throw new Error(
+            `There was a problem with data fetching. HTTP status: ${response.status}`
+          );
+        }
+
+        const data = response.data.events; // Access the correct key
+        console.log("This is your data: ", data);
+        setEvents(data);
+      } catch (error) {
+        console.error("Error with the DB:", error);
+      }
+    }
+    puller();
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white shadow">
@@ -104,6 +119,30 @@ export default function Component() {
               <div className="p-4">
                 <h2 className="text-lg font-semibold text-center cursor-pointer">
                   <Link href="/events/test">{activity.name}</Link>
+                </h2>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* data from the server */}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-5">
+          {event.map((events) => (
+            <div
+              key={events.id}
+              className="bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <Image
+                src={events.image}
+                alt={events.name}
+                width={300}
+                height={300}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h2 className="text-lg font-semibold text-center cursor-pointer">
+                  <Link href="/events/test">{events.name}</Link>
                 </h2>
               </div>
             </div>
