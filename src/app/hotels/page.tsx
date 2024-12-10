@@ -91,7 +91,7 @@ export default function Component() {
               />
               <div className="p-4">
                 <h2 className="text-lg font-semibold text-center cursor-pointer">
-                  <Link href="/hotels">{activity.name}</Link>
+                  <Link href="/hotels/hotel">{activity.name}</Link>
                 </h2>
               </div>
             </div>
