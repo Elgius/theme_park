@@ -5,6 +5,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+import {
+  BookingForm,
+  BookingFormHeader,
+  BookingFormSidebar,
+  BookingFormContent,
+} from "@/components/ui/booking-form";
+
+import { Trash2, PlusCircle } from "lucide-react";
+
+
 const DAYS = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
 const MONTHS = ["October", "November", "December"];
 
@@ -14,7 +24,14 @@ const MONTHS = ["October", "November", "December"];
 //   quantity: number;
 // };
 
-export default function Component() {
+export default function BookingPage() {
+
+  const links = [
+    { href: "/calendar/", label: "Date" },
+    { href: "/calendar/booking", label: "Guest Info" },
+    { href: "/calendar/booking/hotelbooking", label: "Hotel" },
+    { href: "/payment", label: "Payment" },
+  ];
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [currentMonth, setCurrentMonth] = useState(1); // November
@@ -23,6 +40,12 @@ export default function Component() {
   const clickText = () => {
     setIsClicked(!isClicked);
   };
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   console.log("Form submitted:", people);
+  //   // Here you would typically send the data to your backend
+  // };
 
   // legacy code
 
@@ -75,74 +98,13 @@ export default function Component() {
   const calendar = generateCalendar();
 
   return (
-    <div className="max-w-4xl mx-auto p-4">
-      <div className="mb-8"></div>
-
-      <header className="flex items-center mb-6">
-        <Button variant="ghost" className="mr-2">
-          <ArrowLeft className="h-6 w-6" />
-        </Button>
-        <h1 className="text-2xl font-bold">Select Date</h1>
-        <span className="ml-auto text-gray-500">Step 2 of 5</span>
-      </header>
-
-      <div className=" mt-10 flex md:flex-row lg:flex-row  flex-col">
-        <div className="grid md:grid-cols-5 ">
-          <Card className="bg-violet-50 md:col-span-1 ">
-            <CardHeader>
-              <div className="flex justify-between items-center">
-                <CardTitle className="text-lg text-center">
-                  Theme Park Name{" "}
-                </CardTitle>
-              </div>
-              <div>
-                <p className="text-xs font-semibold text-center">Booking</p>
-                {/* <div className=" grid grid-cols-7 gap-2 text-center"> */}
-              </div>
-            </CardHeader>
-            <CardContent className=" text-sm font-semibold text-center">
-              <br></br>
-
-              <div className="space-x-7">
-                <p className="">Date</p>
-
-                <Link href="/calendar/booking">
-                  <p
-                    className={`text-slate-400 ${
-                      isClicked ? "text-black" : "hover:text-black"
-                    } transition-colors duration-300`}
-                    onClick={clickText} // Trigger clickText when clicked
-                  >
-                    Guest Info
-                  </p>
-                </Link>
-                <Link href="/calendar/booking/roombooking">
-                  <p
-                    className={`text-slate-400 ${
-                      isClicked ? "text-black" : "hover:text-black"
-                    } transition-colors duration-300`}
-                    onClick={clickText} // Trigger clickText when clicked
-                  >
-                    Hotel
-                  </p>
-                </Link>
-                <Link href="/events">
-                  <div>
-                    <p
-                      className={`text-slate-400 ${
-                        isClicked ? "text-black" : "hover:text-black"
-                      } transition-colors duration-300`}
-                      onClick={clickText}
-                    >
-                      Payment
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-white md:col-span-4">
+    
+    <BookingForm title="Theme Park Name" subtitle="Step 1 of 4" links={links}>
+      <BookingFormHeader />
+      <div className="grid md:grid-cols-5 ou">
+        <BookingFormSidebar className="md:col-span-1" />
+        <BookingFormContent  >
+        <Card className="bg-white md:col-span-4" noOutline noShadow>
             <CardHeader>
               <div className="flex justify-between items-center">
                 <Button
@@ -166,7 +128,7 @@ export default function Component() {
                 </Button>
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent noOutline noShadow>
               <div className="grid grid-cols-7 text-center">
                 {DAYS.map((day) => (
                   <div key={day} className="font-semibold text-green-800">
@@ -195,21 +157,27 @@ export default function Component() {
                 ))}
               </div>
             </CardContent>
-            <CardContent className="">
+          </Card> 
+          <div className="mt-6 " >
+          <Card noOutline noShadow>
+          <CardContent className="" noOutline noShadow>
               <Button variant="outline" className="text-red-500 border-red-500">
                 09:57
               </Button>
             </CardContent>
           </Card>
-        </div>
+            </div>
+              <div className="flex justify-end mt-4 mr-9">
+              <Button
+                className=" bg-violet-300 hover:bg-violet-400 text-white font-semibold py-3 px-8 "
+                type="submit"
+              >
+                Continue
+              </Button>
+            </div>
+        </BookingFormContent>
       </div>
-      <div className="mt-6 flex justify-between">
-        <Link href="/hotels">
-          <Button className="bg-violet-300 hover:bg-violet-400 text-white font-semibold py-3 px-8">
-            Continue
-          </Button>
-        </Link>
-      </div>
-    </div>
+    </BookingForm>
   );
 }
+
