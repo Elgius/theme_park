@@ -8,7 +8,7 @@ type CardProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 
-const Card = React.forwardRef<HTMLDivElement, CardProps>(({ className, noOutline = false, noShadow = false, ...props }, ref) => (
+const Card = React.forwardRef<HTMLDivElement, CardProps>(({ className, noOutline, noShadow, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(

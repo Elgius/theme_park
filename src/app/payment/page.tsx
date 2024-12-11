@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardFooter,
+
   CardHeader,
-  CardTitle,
+
 } from "@/components/ui/card";
 
 import {
@@ -19,9 +19,7 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Trash2, PlusCircle } from "lucide-react";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight, User } from "lucide-react";
+
 
 
 interface Person {
@@ -35,6 +33,7 @@ interface Person {
 }
 
 interface PayerDetails {
+  id: number;
   cardHolder: string;
   cardNumber: string;
   expiryDate: "",
@@ -56,60 +55,34 @@ export default function PersonalDetailsPage() {
   ]);
 
   const [payer, setPayerData] = useState<PayerDetails[]>([
-    { cardHolder: "", cardNumber: "", expiryDate: "", cvv: ""},
+    { id: 1, cardHolder: "", cardNumber: "", expiryDate: "", cvv: ""},
   ]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setPayerData((prev) => ({ ...prev, [name]: value }));
-  };
+ 
+
+ 
 
 
-  const addPerson = () => {
-    const newId =
-      people.length > 0 ? Math.max(...people.map((p) => p.id)) + 1 : 1;
-    setPeople([
-      ...people,
-      {
-        id: newId,
-        firstName: "",
-        lastName: "",
-        nidPassport: "",
-        emailAddress: "",
-        age: "",
-        contact: "",
-      },
-    ]);
-  };
+  // const addPayer = () => {
+  //   const newId = payer.length > 0 ? Math.max(...payer.map(p => p.id)) + 1 : 1;  // Generate unique id based on max id
+  //   setPayerData([
+  //     ...payer,
+  //     { id: newId, cardHolder: "", cardNumber: "", expiryDate: "", cvv: "" }
+  //   ]);
+  // };
 
-
-
-  const addPayer = ( field: keyof PayerDetails, value: string)=> {
-    setPayerData({
-      ...payer,
-      [field]: value,
-    }) 
-
-  }
-
-  
-  const removePerson = (id: number) => {
-    setPeople(people.filter((person) => person.id !== id));
-  };
-
-  const updatePerson = (id: number, field: keyof Person, value: string) => {
-    setPeople(
-      people.map((person) =>
-        person.id === id ? { ...person, [field]: value } : person
+  const updatePayer = (id: number, field: keyof PayerDetails, value: string) => {
+    setPayerData(
+      payer.map((payerDetails) =>
+        payerDetails.id === id
+          ? { ...payerDetails, [field]: value }
+          : payerDetails
       )
     );
   };
 
-  const [isClicked, setIsClicked] = useState(false);
-
-  const clickText = () => {
-    setIsClicked(!isClicked);
-  }
+  
+  
   
 
 
@@ -137,7 +110,7 @@ export default function PersonalDetailsPage() {
 
               <CardContent>
                 {payer.map((payerDetails) => (
-                  <div  className="mb-6 p-4 border rounded-lg">
+                  <div key={payerDetails.id} className="mb-6 p-4 border rounded-lg">
                     <div className="flex justify-between items-center mb-4">
                       <h3 className="text-lg font-semibold"> Payer Information</h3>
                     
@@ -149,7 +122,7 @@ export default function PersonalDetailsPage() {
                           id={`cardHolder-${payerDetails.cardHolder}`}
                           value={payerDetails.cardHolder}
                           onChange={(e) =>
-                            addPayer( "cardHolder", e.target.value)
+                            updatePayer(payerDetails.id, "cardHolder", e.target.value)
                           }
                           required
                         />
@@ -160,7 +133,7 @@ export default function PersonalDetailsPage() {
                           id={`cardNumber-${payerDetails.cardNumber}`}
                           value={payerDetails.cardNumber}
                           onChange={(e) =>
-                            addPayer( "cardNumber", e.target.value)
+                            updatePayer(payerDetails.id, "cardNumber", e.target.value)
                           }
                           required
                         />
@@ -173,7 +146,7 @@ export default function PersonalDetailsPage() {
                           id={`expiryDate-${payerDetails.expiryDate}`}
                           value={payerDetails.expiryDate}
                           onChange={(e) =>
-                            addPayer(
+                            updatePayer(payerDetails.id,
                               "expiryDate",
                               e.target.value
                             )
@@ -189,7 +162,7 @@ export default function PersonalDetailsPage() {
                           id={`hotelBooking-${payerDetails.cvv}`}
                           value={payerDetails.cvv}
                           onChange={(e) =>
-                            addPayer(
+                            updatePayer(payerDetails.id,
                               "cvv",
                               e.target.value
                             )

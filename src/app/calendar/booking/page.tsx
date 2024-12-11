@@ -31,12 +31,12 @@ interface Person {
   contact: string;
 }
 
-interface PayerDetails {
-  cardHolder: string;
-  cardNumber: string;
-  expiryDate: "";
-  cvv: "";
-}
+// interface PayerDetails {
+//   cardHolder: string;
+//   cardNumber: string;
+//   expiryDate: "";
+//   cvv: "";
+// }
 export default function BookingPage() {
   const links = [
     { href: "/calendar/", label: "Date" },
