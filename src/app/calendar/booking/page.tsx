@@ -110,7 +110,7 @@ export default function BookingPage() {
           <CardHeader>
             {/* <CardTitle className="text-2xl font-bold">Guest Information</CardTitle> */}
           </CardHeader>
-          <CardContent noOutline noShadow>
+          <CardContent >
             {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
             {people.map((person, index) => (
               <div key={person.id} className="mb-6 p-4  ">

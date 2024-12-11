@@ -124,7 +124,7 @@ export default function BookingPage() {
                 </Button>
               </div>
             </CardHeader>
-            <CardContent noOutline noShadow>
+            <CardContent >
               <div className="grid grid-cols-7 text-center">
                 {DAYS.map((day) => (
                   <div key={day} className="font-semibold text-green-800">
@@ -156,7 +156,7 @@ export default function BookingPage() {
           </Card> 
           <div className="mt-6 " >
           <Card noOutline noShadow>
-          <CardContent className="" noOutline noShadow>
+          <CardContent className="" >
               <Button variant="outline" className="text-red-500 border-red-500">
                 09:57
               </Button>

@@ -50,7 +50,7 @@ export default function PersonalDetailsPage() {
 
  
 
-  const [people, setPeople] = useState<Person[]>([
+  const [people] = useState<Person[]>([
     { id: 1, firstName: "", lastName: "", nidPassport: "", emailAddress: "" , age:"", contact: ""},
   ]);
 
