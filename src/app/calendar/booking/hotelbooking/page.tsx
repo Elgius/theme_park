@@ -64,24 +64,24 @@ export default function BookingPage() {
     },
   ]);
 
-  const addBooking = () => {
-    const newId = bookings.length > 0 ? Math.max(...bookings.map((b) => b.id)) + 1 : 1;
-    setBookings([
-      ...bookings,
-      {
-        id: newId,
-        hotel: "",
-        numRooms: "",
-        roomType: "",
-        firstName: "",
-        lastName: "",
-        contact: "",
-        email: "",
-        comments: "",
+  // const addBooking = () => {
+  //   const newId = bookings.length > 0 ? Math.max(...bookings.map((b) => b.id)) + 1 : 1;
+  //   setBookings([
+  //     ...bookings,
+  //     {
+  //       id: newId,
+  //       hotel: "",
+  //       numRooms: "",
+  //       roomType: "",
+  //       firstName: "",
+  //       lastName: "",
+  //       contact: "",
+  //       email: "",
+  //       comments: "",
 
-      },
-    ]);
-  };
+  //     },
+  //   ]);
+  // };
 
   const removeBooking = (id: number) => {
     setBookings(bookings.filter((booking) => booking.id !== id));
@@ -101,7 +101,7 @@ export default function BookingPage() {
     // Submit the bookings data to your backend
   };
 
-  const [isClicked, setIsClicked] = useState(false);
+
 
  
   return (

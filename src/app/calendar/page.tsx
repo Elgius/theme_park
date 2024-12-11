@@ -34,7 +34,7 @@ export default function BookingPage() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [currentMonth, setCurrentMonth] = useState(1); // November
-  const [isClicked, setIsClicked] = useState(false);
+ 
 
  
   // const handleSubmit = (e: React.FormEvent) => {

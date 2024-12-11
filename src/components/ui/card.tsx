@@ -3,17 +3,17 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 type CardProps = React.HTMLAttributes<HTMLDivElement> & {
-  noOutline?: boolean; // Conditionally remove the outline
+  noOutline?: boolean; 
   noShadow?: boolean;
 };
 
 
-const Card = React.forwardRef<HTMLDivElement, CardProps>(({ className, noOutline, noShadow, ...props }, ref) => (
+const Card = React.forwardRef<HTMLDivElement, CardProps>(({ className, noOutline = false, noShadow = false, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
       "rounded-xl bg-card text-card-foreground shadow", // Always applies these styles
-      noOutline ? "" : "border", // Add border if noOutline is false
+      noOutline ? "" : "border", 
       { "shadow-none": noShadow },
       className
     )}
@@ -60,9 +60,8 @@ CardDescription.displayName = "CardDescription"
 
 const CardContent = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> &
-  CardProps
->(({ className,noOutline = false, noShadow = false, ...props }, ref) => (
+  React.HTMLAttributes<HTMLDivElement> 
+>(({ className, ...props }, ref) => (
   <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
 ))
 CardContent.displayName = "CardContent"
