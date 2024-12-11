@@ -62,7 +62,7 @@ export default function Component() {
           );
         }
 
-        const data = response.data.events; // Access the correct key
+        const data = response.data.events;
         console.log("This is your data: ", data);
         setEvents(data);
       } catch (error) {
@@ -155,7 +155,7 @@ export default function Component() {
               />
               <div className="p-4">
                 <h2 className="text-lg font-semibold text-center cursor-pointer">
-                  <Link href="/events/test">{events.name}</Link>
+                  <Link href={`/sEvents/${events.id}`}>{events.name}</Link>
                 </h2>
               </div>
             </div>

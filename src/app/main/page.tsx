@@ -6,20 +6,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-
-
-import Diving from "@/assets/scubadive.jpg"
-import BumperCar from "@/assets/bumpercar.jpg"
-import Dinner from "@/assets/romanticdinner.jpg"
-import Carousel from "@/assets/carousel.jpg"
-
-
+import Diving from "@/assets/scubadive.jpg";
+import BumperCar from "@/assets/bumpercar.jpg";
+import Dinner from "@/assets/romanticdinner.jpg";
+import Carousel from "@/assets/carousel.jpg";
 
 export default function Page() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    
-  
     "https://images.unsplash.com/photo-1526762100-0999d11d611c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0ZXIlMjBwYXJrfGVufDB8fDB8fHww",
 
     "https://images.unsplash.com/photo-1526762100-0999d11d611c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0ZXIlMjBwYXJrfGVufDB8fDB8fHww",
@@ -114,7 +108,7 @@ export default function Page() {
               prolly good stuff
             </p>
             <div className="my-7 flex flex-col items-center justify-center md:flex-row gap-4">
-              <Link href="/calendar/booking/test">
+              <Link href="/events">
                 <Button className="bg-violet-300 text-white font-bold w-20 px-6 py-2 rounded-full hover:bg-violet-400">
                   Events
                 </Button>
@@ -125,17 +119,15 @@ export default function Page() {
                 </Button>
               </Link>
               <Link href="/PassS">
-                  <Button className="bg-violet-300 text-white font-bold w-20 px-6 py-2 rounded-full hover:bg-violet-400 transition-colors">
-                    Book now
-                  </Button>
-
+                <Button className="bg-violet-300 text-white font-bold w-20 px-6 py-2 rounded-full hover:bg-violet-400 transition-colors">
+                  Book now
+                </Button>
               </Link>
-              
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-          <Image
-            src={Carousel}
+            <Image
+              src={Carousel}
               // src="https://images.unsplash.com/photo-1526762100-0999d11d611c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0ZXIlMjBwYXJrfGVufDB8fDB8fHww"
               alt="Activity 1"
               width={200}
@@ -144,7 +136,7 @@ export default function Page() {
               className="rounded-lg"
             />
             <Image
-            src={Diving}
+              src={Diving}
               // src="https://images.unsplash.com/photo-1526762100-0999d11d611c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0ZXIlMjBwYXJrfGVufDB8fDB8fHww"
               alt="Activity 2"
               width={200}
@@ -153,7 +145,7 @@ export default function Page() {
               className="rounded-lg "
             />
             <Image
-            src={BumperCar}
+              src={BumperCar}
               // src="https://images.unsplash.com/photo-1526762100-0999d11d611c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0ZXIlMjBwYXJrfGVufDB8fDB8fHww"
               alt="Activity 3"
               width={200}
@@ -161,7 +153,7 @@ export default function Page() {
               className="rounded-lg"
             />
             <Image
-            src={Dinner}
+              src={Dinner}
               // src="https://images.unsplash.com/photo-1526762100-0999d11d611c?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2F0ZXIlMjBwYXJrfGVufDB8fDB8fHww"
               alt="Activity 4"
               width={200}
