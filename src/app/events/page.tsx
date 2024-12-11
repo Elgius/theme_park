@@ -15,23 +15,28 @@ const activities = [
   {
     name: "Diving",
     image: Diving,
+    link: "Diving",
   },
   {
     name: "Bumper car Rides",
     image: BumperCar,
+    link: "bumper",
   },
   {
     name: "ferris wheel ride",
     image: FerrisWheel,
+    link: "ferris",
   },
   {
     name: "surfing",
     image: Surfing,
+    link: "surfing",
   },
 
   {
     name: "Romantic Dinner",
     image: RomanticDinner,
+    link: "rdinner",
   },
 ];
 
@@ -103,6 +108,11 @@ export default function Component() {
       </header>
 
       <main className="container mx-auto px-4 py-8">
+        <>
+          <h1 className="text-center m-5 text-2xl capitalize font-bold">
+            Our daily Events
+          </h1>
+        </>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {activities.map((activity, index) => (
             <div
@@ -118,7 +128,7 @@ export default function Component() {
               />
               <div className="p-4">
                 <h2 className="text-lg font-semibold text-center cursor-pointer">
-                  <Link href="/events/test">{activity.name}</Link>
+                  <Link href={`/events/${activity.link}`}>{activity.name}</Link>
                 </h2>
               </div>
             </div>
@@ -126,6 +136,9 @@ export default function Component() {
         </div>
 
         {/* data from the server */}
+        <h1 className="text-center m-10 text-2xl capitalize font-bold">
+          Our Special Events
+        </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-5">
           {event.map((events) => (
