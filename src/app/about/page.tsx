@@ -2,10 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Crossroad from "@/assets/Crossroads.jpg"
-
-import Watersports from "@/assets/watersports.jpg"
-import {Footer} from "@/components/ui/footer"
+import Watersports from "@/assets/watersports.jpg";
+import {Footer} from "@/components/ui/footer";
 
 
 export default function Component() {
@@ -68,7 +66,7 @@ export default function Component() {
           <div className="ml-9 mt-20 col-span-2 text-justify">
           FunIsland is your ultimate destination for adventures and memories. We are committed to providing an unforgettable experience to all our guests.Whether you're here for adrenaline-pumping roller coasters, enchanting family attractions, or relaxing scenic areas, we are dedicated to delivering an experience like no other.
           <div className="mt-9">
-            We provide a diverse range of attractions,From heart-pounding roller coasters to enchanting family rides, every detail is designed with excitement and wonder in mind. But we’re more than just rides — our vibrant live shows, unique dining experiences, and meticulously themed areas offer something for everyone. Above all, we pride ourselves on exceptional guest service and a commitment to safety, ensuring every visit is as magical as it is memorable.
+            We provide a diverse range of attractions,From heart-pounding roller coasters to enchanting family rides, every detail is designed with excitement and wonder in mind. But we're more than just rides — our vibrant live shows, unique dining experiences, and meticulously themed areas offer something for everyone. Above all, we pride ourselves on exceptional guest service and a commitment to safety, ensuring every visit is as magical as it is memorable.
 
           
           </div>
