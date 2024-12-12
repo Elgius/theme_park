@@ -10,7 +10,7 @@ import {
   BookingFormHeader,
   BookingFormSidebar,
   BookingFormContent,
-} from "@/components/ui/booking-form";
+} from "@/components/booking-form";
 
 
 

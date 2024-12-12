@@ -6,6 +6,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
+import {Footer} from "@/components/ui/footer";
+
 import Diving from "@/assets/scubadive.jpg";
 import BumperCar from "@/assets/bumpercar.jpg";
 import Dinner from "@/assets/romanticdinner.jpg";
@@ -38,14 +40,16 @@ export default function Page() {
           <nav>
             <ul className="flex space-x-4">
               <li>
-                <a href="#" className="text-red-600 hover:text-red-800">
+                <Link href="/main" className="text-red-600 hover:text-red-800"> Home</Link>
+                {/* <a href="#" className="text-red-600 hover:text-red-800">
                   Home
-                </a>
+                </a> */}
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
+              <Link href="/about" className="text-gray-600 hover:text-gray-900">  About</Link>
+                {/* <a href="#" className="text-gray-600 hover:text-gray-900">
                   About
-                </a>
+                </a> */}
               </li>
               <li>
                 <a href="/PassS" className="text-gray-600 hover:text-gray-900">
@@ -163,6 +167,10 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <Footer/>
+
     </div>
+    
+    
   );
 }

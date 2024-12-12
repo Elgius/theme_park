@@ -14,7 +14,7 @@ import {
   BookingFormHeader,
   BookingFormSidebar,
   BookingFormContent,
-} from "@/components/ui/booking-form";
+} from "@/components/booking-form";
 
 
 import { Input } from "@/components/ui/input";
@@ -40,7 +40,7 @@ interface PayerDetails {
   cvv: "",
 }
 
-export default function PersonalDetailsPage() {
+export default function PaymentPage() {
   const links = [
     { href: "/calendar/", label: "Date" },
     { href: "/calendar/booking", label: "Guest Info" },

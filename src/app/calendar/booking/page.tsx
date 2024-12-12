@@ -14,7 +14,7 @@ import {
   BookingFormHeader,
   BookingFormSidebar,
   BookingFormContent,
-} from "@/components/ui/booking-form";
+} from "@/components/booking-form";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
