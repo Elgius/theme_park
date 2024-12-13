@@ -4,9 +4,9 @@
 <br />
 [x] Should be able to add hotels
 <br />
-[] Hotel booking should include prices
+[x] Hotel booking should include prices
 <br />
-[] Event details pages
+[x] Event details pages
 <br />
 [] Fix Booking flow (right now it breaks at billing page)
 <br />
