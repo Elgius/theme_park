@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import image from "@/assets/Ferris.jpg";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import { useRouter } from "next/navigation";
 
 interface Sevents {
   id: number;
@@ -19,40 +19,47 @@ interface Sevents {
 }
 
 export default function EventDetails({ eventId }: { eventId: string }) {
-  const [sEvent, setSEvent] = useState<Sevents | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [sEvent, setSevent] = useState<Sevents[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     async function fetchEventDetails() {
       try {
-        const response = await axios.post("/api/eventDetails", {
-          id: eventId,
-        });
+        setIsLoading(true);
+        const response = await fetch(`/api/eventDetails?id=${eventId}`);
+        const data = await response.json();
 
-        if (!response.data.success) {
-          alert("Contact support");
-          throw new Error(
-            `There seems to be a problem from our side. HTTP status: ${response.status}`
-          );
+        if (!data.success) {
+          console.error("API Error:", data.error);
+          setError(data.error || "An error occurred");
+          return;
         }
-        const data = response.data.event;
 
         console.log("Full API Response:", data);
-
-        setSEvent(data);
+        setSevent(data.event);
       } catch (error) {
         console.error(
           "There has been an error when communicating with server",
           error
         );
+        setError("An error occurred while fetching data");
+      } finally {
+        setIsLoading(false);
       }
     }
+
     fetchEventDetails();
   }, [eventId]);
 
-  if (!sEvent) {
-    return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
+  if (error) {
+    router.push("/altError");
   }
 
+  if (!event) return <div>No event found</div>;
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white shadow">

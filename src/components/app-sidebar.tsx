@@ -2,11 +2,10 @@ import * as React from "react";
 import { GalleryVerticalEnd } from "lucide-react";
 
 import { NavMain } from "@/components/nav-main";
-// import { SidebarOptInForm } from "@/components/sidebar-opt-in-form";
+
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -14,107 +13,23 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 
-// This is sample data.
 const data = {
   navMain: [
     {
       title: "Overview",
-      url: "#",
-      // items: [
-      //   {
-      //     title: "Installation",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Project Structure",
-      //     url: "#",
-      //   },
-      // ],
+      url: "/dashboard",
     },
     {
       title: "Hotels",
-      url: "#",
-      // items: [
-      //   {
-      //     title: "Routing",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Data Fetching",
-      //     url: "#",
-      //     isActive: true,
-      //   },
-      //   {
-      //     title: "Rendering",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Caching",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Styling",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Optimizing",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Configuring",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Testing",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Authentication",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Deploying",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Upgrading",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Examples",
-      //     url: "#",
-      //   },
-      // ],
+      url: "/dashboard/hotel",
     },
     {
-      title: "Events booking",
-      url: "#",
-      // items: [
-      //   {
-      //     title: "Components",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "File Conventions",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Functions",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "next.config.js Options",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "CLI",
-      //     url: "#",
-      //   },
-      //   {
-      //     title: "Edge Runtime",
-      //     url: "#",
-      //   },
-      // ],
+      title: "Events",
+      url: "/dashboard/events",
+    },
+    {
+      title: "Customers",
+      url: "/dashboard/customers",
     },
   ],
 };
@@ -141,12 +56,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarContent>
         <NavMain items={data.navMain} />
       </SidebarContent>
-      <SidebarFooter>
-        {/* Footer to be worked on later */}
-        {/* <div className="p-1">
-          <SidebarOptInForm />
-        </div> */}
-      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   );

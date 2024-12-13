@@ -13,11 +13,8 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { HeroSection } from "@/components/dash/HeroSection";
-import { AttractionsGrid } from "@/components/dash/AttractionsGrid";
-import { WeatherWidget } from "@/components/dash/WeatherWidget";
-import { TicketBooking } from "@/components/dash/TicketBooking";
-import { NewsCarousel } from "@/components/dash/NewsCarousel";
+
+import { HotelManagement } from "@/components/dash/HotelManagement";
 
 export default function Page() {
   return (
@@ -34,24 +31,13 @@ export default function Page() {
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
-                <BreadcrumbPage> Overview</BreadcrumbPage>
+                <BreadcrumbPage>Customer</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </header>
         <main className="p-4 space-y-6">
-          <HeroSection />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold mb-4">Popular Attractions</h2>
-              <AttractionsGrid />
-            </div>
-            <div className="space-y-6">
-              <WeatherWidget />
-              <TicketBooking />
-              <NewsCarousel />
-            </div>
-          </div>
+          <HotelManagement />
         </main>
       </SidebarInset>
     </SidebarProvider>
