@@ -19,25 +19,31 @@ import {
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Image from "next/image";
+import Link from "next/link";
+
+import BmlLogo from "@/assets/bml-logo.svg";
 
 
 
-interface Person {
-  id: number;
-  firstName: string;
-  lastName: string;
-  nidPassport: string;
-  emailAddress: string;
-  age: string;
-  contact: string;
-}
+// interface Person {
+//   id: number;
+//   firstName: string;
+//   lastName: string;
+//   nidPassport: string;
+//   emailAddress: string;
+//   age: string;
+//   contact: string;
+// }
 
 interface PayerDetails {
   id: number;
-  cardHolder: string;
-  cardNumber: string;
-  expiryDate: "",
-  cvv: "",
+  first_name: string;
+  last_name: string;
+  contact: string,
+  email: string,
+  billing_address: string,
+  island: string;
 }
 
 export default function PaymentPage() {
@@ -50,13 +56,29 @@ export default function PaymentPage() {
 
  
 
-  const [people] = useState<Person[]>([
-    { id: 1, firstName: "", lastName: "", nidPassport: "", emailAddress: "" , age:"", contact: ""},
-  ]);
+  // const [people] = useState<Person[]>([
+  //   { id: 1, firstName: "", lastName: "", nidPassport: "", emailAddress: "" , age:"", contact: ""},
+  // ]);
 
   const [payer, setPayerData] = useState<PayerDetails[]>([
-    { id: 1, cardHolder: "", cardNumber: "", expiryDate: "", cvv: ""},
+    { 
+      id: 1, 
+      first_name: "", 
+      last_name: "", 
+      contact: "", 
+      email: "", 
+      billing_address: "", 
+      island: ""
+    },
   ]);
+
+  const isFormValid = () => {
+    const payerData = payer[0];
+    return payerData.first_name && payerData.last_name && payerData.contact && payerData.email && selected;
+  };
+
+
+  
 
  
 
@@ -81,6 +103,8 @@ export default function PaymentPage() {
     );
   };
 
+
+ 
   
   
   
@@ -89,9 +113,16 @@ export default function PaymentPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", people);
+    console.log("Form submitted:", payer);
      // Here you would typically send the data to your backend
    
+  };
+
+
+  const [selected, setSelected] = useState(false);
+
+  const handleClick = () => {
+    setSelected((prev) => !prev); // Toggle the selection state
   };
 
   return (
@@ -117,37 +148,37 @@ export default function PaymentPage() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor={`cardHolder-${payerDetails.cardHolder}`}>Card Holder Name</Label>
+                        <Label htmlFor={`first_name-${payerDetails.first_name}`}>First Name</Label>
                         <Input
-                          id={`cardHolder-${payerDetails.cardHolder}`}
-                          value={payerDetails.cardHolder}
+                          id={`first_name-${payerDetails.first_name}`}
+                          value={payerDetails.first_name}
                           onChange={(e) =>
-                            updatePayer(payerDetails.id, "cardHolder", e.target.value)
+                            updatePayer(payerDetails.id, "first_name", e.target.value)
                           }
                           required
                         />
                       </div>
                       <div>
-                        <Label htmlFor={`cardNumber-${payerDetails.cardNumber}`}>Card Number</Label>
+                        <Label htmlFor={`last_name-${payerDetails.last_name}`}>Last Name</Label>
                         <Input
-                          id={`cardNumber-${payerDetails.cardNumber}`}
-                          value={payerDetails.cardNumber}
+                          id={`last_name-${payerDetails.last_name}`}
+                          value={payerDetails.last_name}
                           onChange={(e) =>
-                            updatePayer(payerDetails.id, "cardNumber", e.target.value)
+                            updatePayer(payerDetails.id, "last_name", e.target.value)
                           }
                           required
                         />
                       </div>
                       <div>
-                        <Label htmlFor={`expiryDate-${payerDetails.expiryDate}`}>
-                          Expiry Date
+                        <Label htmlFor={`contact-${payerDetails.contact}`}>
+                          Contact
                         </Label>
                         <Input
-                          id={`expiryDate-${payerDetails.expiryDate}`}
-                          value={payerDetails.expiryDate}
+                          id={`contact-${payerDetails.contact}`}
+                          value={payerDetails.contact}
                           onChange={(e) =>
                             updatePayer(payerDetails.id,
-                              "expiryDate",
+                              "contact",
                               e.target.value
                             )
                           }
@@ -155,15 +186,15 @@ export default function PaymentPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor={`hotelBooking-${payerDetails.cvv}`}>
-                          CVV
+                        <Label htmlFor={`email-${payerDetails.email}`}>
+                          Email Address
                         </Label>
                         <Input
-                          id={`hotelBooking-${payerDetails.cvv}`}
-                          value={payerDetails.cvv}
+                          id={`email-${payerDetails.email}`}
+                          value={payerDetails.email}
                           onChange={(e) =>
                             updatePayer(payerDetails.id,
-                              "cvv",
+                              "email",
                               e.target.value
                             )
                           }
@@ -175,23 +206,43 @@ export default function PaymentPage() {
                   </div>
                 ))}
               </CardContent>
+              <div className="grid grid-cols-2 ml-9">
+                <div>
+                <div onClick={handleClick}
+                    className={`flex items-center gap-1 transition-opacity duration-300 ease-in-out cursor-pointer   ${
+                    selected ? "opacity-100 ring-2 ring-slate-400 " : "opacity-50"
+                    }`}
+                    >
+                      {/* <div className="flex items-center space-x-4 ml-9 transition-opacity duration-300 ease-in-out opacity-50 hover:opacity-100 cursor-pointer"> */}
+                  <div className="relative ">
+                  <Image
+                  src={BmlLogo}
+                  alt="bml logo" 
+                  width={40}
+                  height={40}
 
-              {/* <CardFooter className="flex justify-between">
-                <Link href="/payment">
-                
-                <Button className="bg-violet-300 hover:bg-violet-400 text-white font-semibold py-3 px-8" type="submit">Submit Booking</Button>
+                   />   
+                   
+                  </div>
+                  <span className="font-bold"> Bank of Maldives</span>
+                    
+                </div>
+                </div>
+              </div>
 
-                </Link>
-              </CardFooter> */}
               </Card> 
               
               <div className="flex justify-end mt-4 mr-9">
-              <Button
+                <Link href="/payment/payment-gateway">
+                <Button
+                disabled={!isFormValid()}
                 className=" bg-violet-300 hover:bg-violet-400 text-white font-semibold py-3 px-8 "
                 type="submit"
               >
                 Continue to Payment
               </Button>
+              </Link>
+              
             </div>
 
               </form>

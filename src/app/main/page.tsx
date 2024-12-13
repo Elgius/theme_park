@@ -74,6 +74,7 @@ export default function Page() {
       {/* Hero Section */}
       <section className="relative h-[400px]">
         {slides.map((slide, index) => (
+          
           <Image
             key={index}
             src={slide}
