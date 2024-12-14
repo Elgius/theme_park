@@ -58,16 +58,16 @@ export default function Events() {
                 Romantic Dinner
               </div>
               <h2 className="block mt-1 text-lg leading-tight font-medium text-black">
-                Dinner toime
+                {/* Dinner toime */}
               </h2>
-              <p className="mt-2 text-gray-500">placeholder</p>
+              <p className="mt-2 text-gray-500">Set the mood for a perfect evening with our beachside romantic dinner. Enjoy a gourmet three-course meal prepared by our talented chefs, accompanied by fine wine and the sound of the waves crashing in the background. The ideal experience for couples celebrating special moments.</p>
               <div className="mt-4">
                 <h3 className="font-semibold">Age Requirements:</h3>
-                <p>placeholder</p>
+                <p>For couples only.</p>
               </div>
               <div className="mt-4">
                 <h3 className="font-semibold">Activity Times:</h3>
-                <p>placeholder</p>
+                <p>Available daily from 6:00 PM to 9:00 PM.</p>
               </div>
               <div className="mt-4">
                 <h3 className="font-semibold">Family Offers:</h3>
@@ -75,7 +75,7 @@ export default function Events() {
               </div>
               <div className="mt-4">
                 <h3 className="font-semibold">Price:</h3>
-                <p>placeholder</p>
+                <p> $150 per couple, including wine pairings.</p>
               </div>
               <div className="mt-6">
                 <Link href="/PassS">

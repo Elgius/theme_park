@@ -58,24 +58,24 @@ export default function Events() {
                 Surfs up
               </div>
               <h2 className="block mt-1 text-lg leading-tight font-medium text-black">
-                Wipe out toimeee
+                {/* Wipe out toimeee */}
               </h2>
-              <p className="mt-2 text-gray-500">placeholder</p>
+              <p className="mt-2 text-gray-500">Catch the waves and experience the thrill of surfing! Our surfing instructors cater to all skill levels, from first-timers to seasoned surfers. Learn the basics or take your skills to the next level in the clear waters of our stunning beaches.</p>
               <div className="mt-4">
                 <h3 className="font-semibold">Age Requirements:</h3>
-                <p>placeholder</p>
+                <p>Minimum age: 12 years old. Must be accompanied with an adult</p>
               </div>
               <div className="mt-4">
                 <h3 className="font-semibold">Activity Times:</h3>
-                <p>placeholder</p>
+                <p>Lessons available daily at 8:00 AM, 11:00 AM, and 3:00 PM.</p>
               </div>
-              <div className="mt-4">
+              {/* <div className="mt-4">
                 <h3 className="font-semibold">Family Offers:</h3>
                 <p>placeholder</p>
-              </div>
+              </div> */}
               <div className="mt-4">
                 <h3 className="font-semibold">Price:</h3>
-                <p>placeholder</p>
+                <p>$75 for a 1.5-hour lesson, including board rental.</p>
               </div>
               <div className="mt-6">
                 <Link href="/PassS">

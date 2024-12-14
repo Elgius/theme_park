@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 import Link from "next/link";
-import image from "@/assets/Ferris.jpg";
+import image from "@/assets/fWheel.jpg";
 
 export default function Events() {
   return (
@@ -58,24 +58,24 @@ export default function Events() {
                 Ferris wheel
               </div>
               <h2 className="block mt-1 text-lg leading-tight font-medium text-black">
-                Ferris wheel go weeee
+                {/* Ferris wheel go weeee */}
               </h2>
-              <p className="mt-2 text-gray-500">placeholder</p>
+              <p className="mt-2 text-gray-500">Take in breathtaking views from the top of our giant Ferris wheel. Ideal for couples, families, and anyone seeking a relaxing ride above the ground. Enjoy panoramic views of the island, the ocean, and the surrounding areas from the comfort of your enclosed gondola.</p>
               <div className="mt-4">
                 <h3 className="font-semibold">Age Requirements:</h3>
-                <p>placeholder</p>
+                <p>No minimum age, but children must be accompanied by an adult.</p>
               </div>
               <div className="mt-4">
                 <h3 className="font-semibold">Activity Times:</h3>
-                <p>placeholder</p>
+                <p>Daily from 10:00 AM to 8:00 PM.</p>
               </div>
-              <div className="mt-4">
+              {/* <div className="mt-4">
                 <h3 className="font-semibold">Family Offers:</h3>
                 <p>placeholder</p>
-              </div>
+              </div> */}
               <div className="mt-4">
                 <h3 className="font-semibold">Price:</h3>
-                <p>placeholder</p>
+                <p>$10 per person.</p>
               </div>
               <div className="mt-6">
                 <Link href="/PassS">

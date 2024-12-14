@@ -36,11 +36,11 @@ export default function Page() {
       {/* Header */}
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Theme Park Name</h1>
+          <h1 className="text-2xl font-bold">Fun Island</h1>
           <nav>
             <ul className="flex space-x-4">
               <li>
-                <Link href="/main" className="text-red-600 hover:text-red-800"> Home</Link>
+                <Link href="/main" className="text-gray-600 hover:text-gray-900"> Home</Link>
                 {/* <a href="#" className="text-red-600 hover:text-red-800">
                   Home
                 </a> */}
@@ -105,12 +105,17 @@ export default function Page() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl font-bold mb-4">
-              At &apos;Island Name&apos;, we cater to all your get-away needs.
+              At &apos;Fun Island&apos;, we cater to all your getaway needs.
             </h2>
             <p className="text-gray-600 mb-4">
-              Imagine some sample text here. It goes on for a few more lines,
-              more lines, many many many lines of text, some promotional bs,
-              prolly good stuff
+             Whether you&apos;re looking to escape the hustle and bustle or indulge in a lavish experience, we&apos;ve got something for everyone. Picture this: crystal-clear waters, golden sandy beaches, luxurious rooms, and exceptional service—all at your fingertips. Our island is designed for those who seek relaxation, adventure, or a combination of both.
+             <br></br>
+             <br></br>
+
+            Relax by the pool, enjoy world-class cuisine, and unwind with our spa treatments. Explore local culture with guided tours or take part in thrilling water sports. With a wide range of activities and amenities, there&apos;s never a dull moment at Fun Island.
+            <br></br>
+            <br></br>
+            Experience the island&apos;s natural beauty, and let us take care of the details. From the moment you arrive until the time you depart, Fun Island is your perfect escape. Don&apos;t wait—book your stay with us today and create memories that will last a lifetime.
             </p>
             <div className="my-7 flex flex-col items-center justify-center md:flex-row gap-4">
               <Link href="/events">

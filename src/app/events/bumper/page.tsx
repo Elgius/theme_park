@@ -58,24 +58,24 @@ export default function Events() {
                 Bumper Car
               </div>
               <h2 className="block mt-1 text-lg leading-tight font-medium text-black">
-                Have fun on our new bumper car experience
+              
               </h2>
-              <p className="mt-2 text-gray-500">placeholder</p>
+              <p className="mt-2 text-gray-500">Get ready for high-energy fun in our bumper car arena! Whether you&apos;re with friends or family, our bumper cars guarantee a thrilling experience as you race, spin, and crash into one another. It&apos;s the perfect activity for adrenaline lovers and those looking to release some energy in a safe and controlled environment.</p>
               <div className="mt-4">
                 <h3 className="font-semibold">Age Requirements:</h3>
-                <p>placeholder</p>
+                <p> Minimum age: 5 years old. Children under 12 must be accompanied by an adult.</p>
               </div>
               <div className="mt-4">
                 <h3 className="font-semibold">Activity Times:</h3>
-                <p>placeholder</p>
+                <p>Available daily from 10:00 AM to 6:00 PM.</p>
               </div>
-              <div className="mt-4">
+              {/* <div className="mt-4">
                 <h3 className="font-semibold">Family Offers:</h3>
                 <p>placeholder</p>
-              </div>
+              </div> */}
               <div className="mt-4">
                 <h3 className="font-semibold">Price:</h3>
-                <p>placeholder</p>
+                <p>$15 for a 10-minute session.</p>
               </div>
               <div className="mt-6">
                 <Link href="/PassS">

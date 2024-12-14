@@ -23,6 +23,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import BmlLogo from "@/assets/bml-logo.svg";
+import { Footer } from "@/components/ui/footer";
 
 
 
@@ -126,8 +127,46 @@ export default function PaymentPage() {
   };
 
   return (
+    <div className="min-h-screen overflow-hidden bg-white-100">
+      {/* Header */}
+      <header className="bg-white shadow">
+        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Fun Island</h1>
+          <nav>
+            <ul className="flex space-x-4">
+              <li>
+                <Link href="/main" className="text-gray-600 hover:text-gray-900"> Home</Link>
+                {/* <a href="#" className="text-red-600 hover:text-red-800">
+                  Home
+                </a> */}
+              </li>
+              <li>
+              <Link href="/about" className="text-gray-600 hover:text-gray-900">  About</Link>
+                {/* <a href="#" className="text-gray-600 hover:text-gray-900">
+                  About
+                </a> */}
+              </li>
+              <li>
+                <a href="/PassS" className="text-gray-600 hover:text-gray-900">
+                  Tickets
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/login" className="text-gray-600 hover:text-gray-900">
+                  Login
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
   
-      <BookingForm title="Theme Park Name" subtitle="Step 4 of 4" links={links}>
+      <BookingForm title="" subtitle="Step 4 of 4" links={links}>
       <BookingFormHeader />
       <div className="grid md:grid-cols-5 ">
         <BookingFormSidebar className="md:col-span-1" />
@@ -257,6 +296,8 @@ export default function PaymentPage() {
       </div>
       
     </BookingForm>
+    <Footer/>
+    </div>
     
 
 

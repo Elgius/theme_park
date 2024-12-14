@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Trash2 } from "lucide-react";
-
+import Link from "next/link";
 
 
 interface Booking {
@@ -32,6 +32,7 @@ import {
   BookingFormSidebar,
   BookingFormContent,
 } from "@/components/booking-form";
+import { Footer } from "@/components/ui/footer";
 
 
 // interface PayerDetails {
@@ -105,7 +106,45 @@ export default function BookingPage() {
 
  
   return (
-    <BookingForm title="Theme Park Name" subtitle="Step 3 of 4" links={links}>
+    <div className="min-h-screen overflow-hidden bg-white-100">
+      {/* Header */}
+      <header className="bg-white shadow">
+        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+          <h1 className="text-2xl font-bold">Fun Island</h1>
+          <nav>
+            <ul className="flex space-x-4">
+              <li>
+                <Link href="/main" className="text-gray-600 hover:text-gray-900"> Home</Link>
+                {/* <a href="#" className="text-red-600 hover:text-red-800">
+                  Home
+                </a> */}
+              </li>
+              <li>
+              <Link href="/about" className="text-gray-600 hover:text-gray-900">  About</Link>
+                {/* <a href="#" className="text-gray-600 hover:text-gray-900">
+                  About
+                </a> */}
+              </li>
+              <li>
+                <a href="/PassS" className="text-gray-600 hover:text-gray-900">
+                  Tickets
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="/login" className="text-gray-600 hover:text-gray-900">
+                  Login
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    <BookingForm title="" subtitle="Step 3 of 4" links={links}>
     <BookingFormHeader />
     <div className="grid md:grid-cols-5 ou">
       <BookingFormSidebar className="md:col-span-1" />
@@ -253,9 +292,12 @@ export default function BookingPage() {
             </Button> */}
           </CardContent>
           <CardFooter className="flex justify-end">
+            <Link href="/payment">
             <Button type="submit" className="bg-violet-300 hover:bg-violet-400 text-white font-semibold py-2 px-4">
               Continue
             </Button>
+            </Link>
+            
           </CardFooter>
         <div className="divide-y divide-dashed">
         
@@ -265,6 +307,8 @@ export default function BookingPage() {
       </BookingFormContent>
     </div>
   </BookingForm>
+  <Footer/>
+  </div>
   );
 }
 
