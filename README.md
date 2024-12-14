@@ -8,9 +8,9 @@
 <br />
 [x] Event details pages
 <br />
-[] Fix Booking flow (right now it breaks at billing page)
+[x] Fix Booking flow (right now it breaks at billing page)
 <br />
-[] Need to fix calendar? Right now only fixed dates selected.
+[x] Need to fix calendar? Right now only fixed dates selected.
 <br />
 [x] And add ferry available timings. (Now there's only one option)
 <br />

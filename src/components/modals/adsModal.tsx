@@ -73,6 +73,12 @@ export default function AdsModal() {
             <div className="flex  items-center justify-center">
               Welcoming Crew
             </div>
+            <div className="flex  items-center justify-center">
+              All day buffet
+            </div>
+            <div className="flex  items-center justify-center">
+              Cultural exhibition
+            </div>
           </div>
         </ModalContent>
         <ModalFooter className="gap-4">

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Info } from "lucide-react";
+import Link from "next/link";
 
 type Ticket = {
   name: string;
@@ -73,12 +74,15 @@ export default function Page() {
       <div className="grid md:grid-cols-3 gap-6">
         <Card className="bg-orange-50 md:col-span-2">
           <CardHeader>
-            <CardTitle className="text-xl font-semibold ">Ticket Selection</CardTitle>
+            <CardTitle className="text-xl font-semibold ">
+              Ticket Selection
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-base text-gray-600 mb-4">
-              Each booking is treated as one group and will enter the park together, we cannot split groups on the day. If your
-              group will not check in together, please book tickets separately.
+              Each booking is treated as one group and will enter the park
+              together, we cannot split groups on the day. If your group will
+              not check in together, please book tickets separately.
             </p>
             <h2 className="text-xl font-semibold mb-4">Select quantity</h2>
             {tickets.map((ticket) => (
@@ -121,7 +125,7 @@ export default function Page() {
         </Card>
 
         <Card className="bg-violet-50">
-          <CardHeader >
+          <CardHeader>
             <CardTitle>Ticket Summary</CardTitle>
           </CardHeader>
           <CardContent>
@@ -168,12 +172,14 @@ export default function Page() {
       </div>
 
       <div className="mt-6">
-        <Button
-          className="w-full bg-violet-300 hover:bg-violet-400 text-black font-semibold py-3"
-          disabled={totalQuantity === 0}
-        >
-          Continue
-        </Button>
+        <Link href={"/calendar"}>
+          <Button
+            className="w-full bg-violet-300 hover:bg-violet-400 text-black font-semibold py-3"
+            disabled={totalQuantity === 0}
+          >
+            Continue
+          </Button>
+        </Link>
       </div>
     </div>
   );

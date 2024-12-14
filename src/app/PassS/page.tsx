@@ -14,8 +14,6 @@ import Ferris from "@/assets/Ferris.jpg";
 import MerryGoROund from "@/assets/merryGoRound.jpg";
 import AdsModal from "@/components/modals/adsModal";
 
-//
-
 export default function Page() {
   return (
     <>
@@ -104,12 +102,7 @@ export default function Page() {
                   className="rounded-lg shadow-lg"
                 />
               </div>
-              {/* <div>
-                <h1 className=" text-xl font-bold">
-                  Get your tickets to your liking
-                </h1>
-              </div> */}
-              <br></br>
+              <br />
               <CardContent className="flex items-center justify-center">
                 <div className="text-sm text-slate-500 font-semibold text-justify">
                   {" "}
