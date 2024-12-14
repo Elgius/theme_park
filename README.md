@@ -1,6 +1,6 @@
 [x] Need user for admin
 <br />
-[] Need user for customer
+[x] Need user for customer
 <br />
 [x] Should be able to add hotels
 <br />
@@ -12,6 +12,6 @@
 <br />
 [] Need to fix calendar? Right now only fixed dates selected.
 <br />
-[] And add ferry available timings. (Now there's only one option)
+[x] And add ferry available timings. (Now there's only one option)
 <br />
 [x] Bookings should be visible from dashboard
