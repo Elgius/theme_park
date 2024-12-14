@@ -29,7 +29,7 @@ export default function ErrorPage() {
         </CardContent>
         <CardFooter className="flex flex-col gap-2">
           <Button asChild className="w-full">
-            <Link href="/auth/signin">Try Again</Link>
+            <Link href="/login">Try Again</Link>
           </Button>
           <Button variant="outline" asChild className="w-full">
             <Link href="/support">Contact Support</Link>
