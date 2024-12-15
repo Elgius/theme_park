@@ -71,7 +71,7 @@ export default function SignIn() {
             >
               Forgot password?
             </a>
-          </CardFooter>
+          </CardFooter> 
         </form>
       </Card>
     </div>

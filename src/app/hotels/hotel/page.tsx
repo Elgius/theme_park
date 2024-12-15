@@ -1,41 +1,12 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
+import Navbar from '../../Navbar'
+
 export default function Events() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Theme Park Name</h1>
-          <nav>
-            <ul className="flex space-x-4">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-red-600 hover:text-red-800 font-semibold"
-                >
-                  Tickets
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="container mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">

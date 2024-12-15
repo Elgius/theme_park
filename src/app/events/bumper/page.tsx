@@ -1,44 +1,13 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-
 import Link from "next/link";
 import bumperCar from "@/assets/bumpercar.jpg";
+import Navbar from '../../Navbar'
 
 export default function Events() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Theme Park Name</h1>
-          <nav>
-            <ul className="flex space-x-4">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-red-600 hover:text-red-800 font-semibold"
-                >
-                  Tickets
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="container mx-auto px-4 py-8">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -46,41 +15,35 @@ export default function Events() {
             <div className="md:flex-shrink-0">
               <Image
                 src={bumperCar}
-                // src="https://images.unsplash.com/photo-1517627043994-b991abb62fc8?q=80&w=417&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="BumperCar"
+                alt="Bumper Car"
                 width={300}
                 height={400}
-                className="h-48 w-full object-cover md:h-full md:w-48"
+                className="h-48 w-full object-cover md:h-full md:w-48 rounded-lg"
               />
             </div>
-            <div className="p-8">
-              <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+            <div className="p-6 md:p-8">
+              <div className="uppercase tracking-wide text-sm text-indigo-600 font-semibold mb-2">
                 Bumper Car
               </div>
-              <h2 className="block mt-1 text-lg leading-tight font-medium text-black">
-              
-              </h2>
-              <p className="mt-2 text-gray-500">Get ready for high-energy fun in our bumper car arena! Whether you&apos;re with friends or family, our bumper cars guarantee a thrilling experience as you race, spin, and crash into one another. It&apos;s the perfect activity for adrenaline lovers and those looking to release some energy in a safe and controlled environment.</p>
+              <p className="text-gray-700 leading-relaxed">
+                Get ready for high-energy fun in our bumper car arena! Whether you’re with friends or family, our bumper cars guarantee a thrilling experience as you race, spin, and crash into one another. It’s the perfect activity for adrenaline lovers and those looking to release some energy in a safe and controlled environment.
+              </p>
               <div className="mt-4">
-                <h3 className="font-semibold">Age Requirements:</h3>
-                <p> Minimum age: 5 years old. Children under 12 must be accompanied by an adult.</p>
+                <h3 className="font-semibold text-gray-800">Age Requirements:</h3>
+                <p className="text-gray-600">Minimum age: 5 years old. Children under 12 must be accompanied by an adult.</p>
               </div>
               <div className="mt-4">
-                <h3 className="font-semibold">Activity Times:</h3>
-                <p>Available daily from 10:00 AM to 6:00 PM.</p>
+                <h3 className="font-semibold text-gray-800">Activity Times:</h3>
+                <p className="text-gray-600">Available daily from 10:00 AM to 6:00 PM.</p>
               </div>
-              {/* <div className="mt-4">
-                <h3 className="font-semibold">Family Offers:</h3>
-                <p>placeholder</p>
-              </div> */}
               <div className="mt-4">
-                <h3 className="font-semibold">Price:</h3>
-                <p>$15 for a 10-minute session.</p>
+                <h3 className="font-semibold text-gray-800">Price:</h3>
+                <p className="text-gray-600">$15 for a 10-minute session.</p>
               </div>
               <div className="mt-6">
                 <Link href="/PassS">
-                  <Button className="bg-violet-300 text-white font-bold px-6 py-2 rounded-full hover:bg-violet-400 transition-colors">
-                    Book now
+                  <Button className="bg-violet-500 text-white font-bold px-6 py-2 rounded-full hover:bg-violet-600 transition-colors">
+                    Book Now
                   </Button>
                 </Link>
               </div>

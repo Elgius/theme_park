@@ -65,25 +65,43 @@ export default function AdsModal() {
               </motion.div>
             ))}
           </div>
-          <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
-            <div className="flex  items-center justify-center">
-              Water sports
+          <div className="py-10 grid grid-cols-2 gap-6 max-w-sm mx-auto">
+            <div className="flex flex-col items-center justify-center bg-red-50 p-4 rounded-lg shadow hover:shadow-md transition duration-300 cursor-pointer">
+              <div className="text-2xl text-blue-500">
+                🌊 {/* Replace with a relevant Water sports icon */}
+              </div>
+              <div className="text-lg font-medium text-gray-700 mt-2">Water Sports</div>
             </div>
-            <div className="flex  items-center justify-center">BBQ party</div>
-            <div className="flex  items-center justify-center">
-              Welcoming Crew
+            <div className="flex flex-col items-center justify-center bg-red-50 p-4 rounded-lg shadow hover:shadow-md transition duration-300 cursor-pointer">
+              <div className="text-2xl text-blue-500">
+                🍖 {/* Replace with a relevant BBQ icon */}
+              </div>
+              <div className="text-lg font-medium text-gray-700 mt-2">BBQ Party</div>
             </div>
-            <div className="flex  items-center justify-center">
-              All day buffet
+            <div className="flex flex-col items-center justify-center bg-red-50 p-4 rounded-lg shadow hover:shadow-md transition duration-300 cursor-pointer">
+              <div className="text-2xl text-blue-500">
+                🤝 {/* Replace with a relevant Welcome Crew icon */}
+              </div>
+              <div className="text-lg font-medium text-gray-700 mt-2">Welcoming Crew</div>
             </div>
-            <div className="flex  items-center justify-center">
-              Cultural exhibition
+            <div className="flex flex-col items-center justify-center bg-red-50 p-4 rounded-lg shadow hover:shadow-md transition duration-300 cursor-pointer">
+              <div className="text-2xl text-blue-500">
+                🍽️ {/* Replace with a relevant Buffet icon */}
+              </div>
+              <div className="text-lg font-medium text-gray-700 mt-2">All Day Buffet</div>
+            </div>
+            <div className="flex flex-col items-center justify-center bg-red-50 p-4 rounded-lg shadow hover:shadow-md transition duration-300 cursor-pointer">
+              <div className="text-2xl text-blue-500">
+                🎭 {/* Replace with a relevant Cultural Exhibition icon */}
+              </div>
+              <div className="text-lg font-medium text-gray-700 mt-2">Cultural Exhibition</div>
             </div>
           </div>
+
         </ModalContent>
-        <ModalFooter className="gap-4">
+        <ModalFooter className="gap-4 justify-center">
           <Link href={link1}>
-            <Button className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
+            <Button className="bg-black text-white dark:bg-white dark:text-black text-sm px-6 py-2 rounded-lg">
               Book Now
             </Button>
           </Link>

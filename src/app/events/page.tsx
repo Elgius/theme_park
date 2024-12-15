@@ -11,6 +11,8 @@ import Surfing from "@/assets/surfing.jpg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+import Navbar from '../Navbar'
+
 const activities = [
   {
     name: "Diving",
@@ -18,21 +20,20 @@ const activities = [
     link: "Diving",
   },
   {
-    name: "Bumper car Rides",
+    name: "Bumper Car Rides",
     image: BumperCar,
     link: "bumper",
   },
   {
-    name: "ferris wheel ride",
+    name: "Ferris Wheel Ride",
     image: FerrisWheel,
     link: "ferris",
   },
   {
-    name: "surfing",
+    name: "Surfing",
     image: Surfing,
     link: "surfing",
   },
-
   {
     name: "Romantic Dinner",
     image: RomanticDinner,
@@ -47,7 +48,6 @@ interface Events {
 }
 
 export default function Component() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [event, setEvents] = useState<Events[]>([]);
 
   useEffect(() => {
@@ -74,51 +74,14 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Theme Park Name</h1>
-          <nav>
-            <ul className="flex space-x-4">
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-red-600 hover:text-red-800 font-semibold"
-                >
-                  Tickets
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="container mx-auto px-4 py-8">
-        <>
-          <h1 className="text-center m-5 text-2xl capitalize font-bold">
-            Our daily Events
-          </h1>
-        </>
+        <h1 className="text-center m-5 text-2xl capitalize font-bold">Our Daily Events</h1>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {activities.map((activity, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-            >
+            <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <Image
                 src={activity.image}
                 alt={activity.name}
@@ -135,17 +98,11 @@ export default function Component() {
           ))}
         </div>
 
-        {/* data from the server */}
-        <h1 className="text-center m-10 text-2xl capitalize font-bold">
-          Our Special Events
-        </h1>
+        <h1 className="text-center m-10 text-2xl capitalize font-bold">Our Special Events</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-5">
           {event.map((events) => (
-            <div
-              key={events.id}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
-            >
+            <div key={events.id} className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105">
               <Image
                 src={events.image}
                 alt={events.name}

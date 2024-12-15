@@ -102,7 +102,7 @@ export default function Page() {
                     </div>
                     <div className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
                       <div className="flex  items-center justify-center">
-                        Water sports
+                        Water Sports
                       </div>
                       <div className="flex  items-center justify-center">
                         BBQ party

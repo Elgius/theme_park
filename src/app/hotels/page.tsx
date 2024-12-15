@@ -2,6 +2,8 @@
 import { Footer } from "@/components/ui/footer";
 import Link from "next/link";
 
+import Navbar from '../Navbar'
+
 const activities = [
   {
     name: "Sunset Hotel",
@@ -43,42 +45,7 @@ const activities = [
 export default function Component() {
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow">
-        <div className="container mx-auto px-4 py-6 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Fun Island</h1>
-          <nav>
-            <ul className="flex space-x-4">
-              <li>
-                <Link href="/main" className="text-gray-600 hover:text-gray-900"> Home</Link>
-                {/* <a href="#" className="text-red-600 hover:text-red-800">
-                  Home
-                </a> */}
-              </li>
-              <li>
-              <Link href="/about" className="text-gray-600 hover:text-gray-900">  About</Link>
-                {/* <a href="#" className="text-gray-600 hover:text-gray-900">
-                  About
-                </a> */}
-              </li>
-              <li>
-                <a href="/PassS" className="text-gray-600 hover:text-gray-900">
-                  Tickets
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-600 hover:text-gray-900">
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a href="/login" className="text-gray-600 hover:text-gray-900">
-                  Login
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
       <main className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

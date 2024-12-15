@@ -83,7 +83,7 @@ export default function Page() {
               </CardContent>
               <br></br>
             </CardContent>
-            <CardFooter className="flex items-center justify-center">
+            <CardFooter className="flex items-center justify-center mt-10">
               <AdsModal />
             </CardFooter>
           </Card>
@@ -111,7 +111,7 @@ export default function Page() {
                 </div>
               </CardContent>
             </CardContent>
-            <CardFooter className="flex items-center justify-center">
+            <CardFooter className="flex items-center justify-center mt-5">
               <AdsModal />
             </CardFooter>
           </Card>

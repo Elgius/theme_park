@@ -16,7 +16,7 @@ export default function Page() {
               layout="fill"
               // width={200}
               // height={100}
-              className="rounded-lg shadow-lg"
+              className="rounded-l-lg shadow-lg"
             />
           </div>
         </div>
